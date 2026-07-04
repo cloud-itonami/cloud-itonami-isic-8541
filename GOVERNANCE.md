@@ -1,6 +1,6 @@
 # Governance
 
-`cloud-itonami-8541` is an OSS open-business blueprint for sports and recreation education -- instruction in athletics, fitness and recreational skills.
+`cloud-itonami-isic-8541` is an OSS open-business blueprint for sports and recreation education -- instruction in athletics, fitness and recreational skills.
 Governance covers both the capability layer and the operator model.
 
 ## Maintainers

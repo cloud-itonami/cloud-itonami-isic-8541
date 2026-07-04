@@ -2,7 +2,7 @@
 
 ## Classification
 
-- Repository: `cloud-itonami-8541`
+- Repository: `cloud-itonami-isic-8541`
 - ISIC Rev.5: `8541`
 - Activity: sports and recreation education -- instruction in athletics, fitness and recreational skills
 - Social impact: education access, data sovereignty, transparent audit

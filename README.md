@@ -1,4 +1,4 @@
-# cloud-itonami-8541
+# cloud-itonami-isic-8541
 
 Open Business Blueprint for **ISIC Rev.5 8541**: Sports and recreation education.
 
