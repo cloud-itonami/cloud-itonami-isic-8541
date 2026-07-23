@@ -59,7 +59,16 @@
           :required-evidence ["Einwilligungsprotokoll (enrollment-consent-record)"
                               "Programmprotokoll (program-curriculum-record)"
                               "Anwesenheitsstundenprotokoll (attendance-hours-record)"
-                              "Führungszeugnisprotokoll (background-check-clearance-record)"]}})
+                              "Führungszeugnisprotokoll (background-check-clearance-record)"]}
+   "AUS" {:name "Australia"
+          :owner-authority "Sport Integrity Australia (Australian Government statutory agency established under s20A of the Act)"
+          :legal-basis "Sport Integrity Australia Act 2020 (Cth), s3A (Object of this Act) and s20A (Establishment of Sport Integrity Australia)"
+          :national-spec "National Integrity Framework (NIF) Safeguarding Children and Young People Policy; the NIF's safeguarding-policy layer is national (adopted by National Sporting Organisations), but coach background-check screening itself runs through State/Territory Working with Children Check schemes -- Australia is a federated model with no single national WWCC"
+          :provenance "https://www.sportintegrity.gov.au/"
+          :required-evidence ["Enrollment consent record"
+                              "Program-curriculum record"
+                              "Attendance-hours record"
+                              "Background-check-clearance record"]}})
 
 (defn spec-basis
   "The jurisdiction's requirement map, or nil -- nil means NO spec-basis,

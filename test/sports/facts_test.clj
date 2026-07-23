@@ -3,7 +3,7 @@
             [sports.facts :as facts]))
 
 (deftest known-jurisdictions-have-a-spec-basis
-  (doseq [iso3 ["JPN" "USA" "GBR" "DEU"]]
+  (doseq [iso3 ["JPN" "USA" "GBR" "DEU" "AUS"]]
     (is (some? (facts/spec-basis iso3)) (str iso3 " should have a spec-basis"))
     (is (= 4 (count (:required-evidence (facts/spec-basis iso3)))))))
 
