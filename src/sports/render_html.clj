@@ -297,7 +297,7 @@
        (esc (nm (or disposition "")))
        (if (seq basis)
          (esc (str/join ", " (map nm basis)))
-         (str "<span class=\"muted\">—</span>"))))
+         "<span class=\"muted\">—</span>")))
 
 (defn- certification-row [rec]
   (row (code (get rec "record_id"))
@@ -344,7 +344,7 @@
                :else                   (pill "bad" "absent from commit record"))
          (if audit-approver
            (code audit-approver)
-           (str "<span class=\"muted\">—</span>"))
+           "<span class=\"muted\">—</span>")
          (cond
            (nil? committed-record) (esc "nothing committed for this record on this run")
            in-record               (esc "approver survives into the SSoT")
@@ -386,10 +386,8 @@
   --color-neutral-solid-gray-50: #f2f2f2;
   --color-neutral-solid-gray-100: #e6e6e6;
   --color-neutral-solid-gray-200: #cccccc;
-  --color-neutral-solid-gray-400: #999999;
   --color-neutral-solid-gray-600: #666666;
   --color-neutral-solid-gray-700: #4d4d4d;
-  --color-neutral-solid-gray-800: #333333;
   --color-neutral-solid-gray-900: #1a1a1a;
   --color-primitive-blue-50: #e8f1fe;
   --color-primitive-blue-200: #c5d7fb;
