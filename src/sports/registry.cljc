@@ -26,7 +26,7 @@
   academy would keep, not the act of finalizing the certification
   itself (that is `sports.operation`'s `:actuation/finalize-
   certification`, always human-gated -- see README `Actuation`)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn- unsigned-certificate
   "Every certificate this actor produces is UNSIGNED -- signature is the
@@ -70,7 +70,7 @@
     (throw (ex-info "certification-finalization: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "certification-finalization: sequence must be >= 0" {})))
-  (let [certification-number (str (str/upper-case jurisdiction) "-CRT-" (zero-pad sequence 6))
+  (let [certification-number (str (str/upper jurisdiction) "-CRT-" (zero-pad sequence 6))
         record {"record_id" certification-number
                 "kind" "certification-finalization-draft"
                 "participant_id" participant-id
