@@ -202,14 +202,14 @@ only -- no bespoke domain capability lib to reference at all.
 
 | File | Role |
 |---|---|
-| `src/sports/store.cljc` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + certification-finalization history. No dynamically-filed sub-record -- the actuation op acts directly on a pre-seeded participant, and the double-actuation guard checks a dedicated `:certified?` boolean rather than a `:status` value |
-| `src/sports/registry.cljc` | Certification-finalization draft records, plus `attendance-hours-insufficient?` -- a literal reuse of `secondary.registry/attendance-hours-insufficient?`'s exact concept and field names, the EIGHTH instance of this fleet's MINIMUM-threshold sufficiency check family |
-| `src/sports/facts.cljc` | Per-jurisdiction sports-instruction catalog with an official spec-basis citation per entry, honest coverage reporting |
-| `src/sports/sportsadvisor.cljc` | **CoachOps-LLM** -- `mock-advisor` ‖ `llm-advisor`; intake/program-verification/background-check-screening/certification-finalization proposals |
-| `src/sports/governor.cljc` | **Instruction Safety Governor** -- 3 HARD checks (spec-basis · evidence-incomplete · attendance-hours-insufficient, ground-truth floor recompute · background-check-not-cleared, unconditional evaluation, a literal reuse of `school.governor/background-check-not-cleared-violations`, the 43rd grounding of this discipline overall) + already-certified guard + 1 soft (confidence/actuation gate) |
-| `src/sports/phase.cljc` | **Phase 0→3** -- read-only → assisted intake → assisted verify → supervised (certification finalization always human; participant intake is the ONLY auto-eligible op, no direct capital risk) |
-| `src/sports/operation.cljc` | **OperationActor** -- langgraph-clj StateGraph |
-| `src/sports/sim.cljc` | demo driver |
+| `src/sports/store.kotoba` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + certification-finalization history. No dynamically-filed sub-record -- the actuation op acts directly on a pre-seeded participant, and the double-actuation guard checks a dedicated `:certified?` boolean rather than a `:status` value |
+| `src/sports/registry.kotoba` | Certification-finalization draft records, plus `attendance-hours-insufficient?` -- a literal reuse of `secondary.registry/attendance-hours-insufficient?`'s exact concept and field names, the EIGHTH instance of this fleet's MINIMUM-threshold sufficiency check family |
+| `src/sports/facts.kotoba` | Per-jurisdiction sports-instruction catalog with an official spec-basis citation per entry, honest coverage reporting |
+| `src/sports/sportsadvisor.kotoba` | **CoachOps-LLM** -- `mock-advisor` ‖ `llm-advisor`; intake/program-verification/background-check-screening/certification-finalization proposals |
+| `src/sports/governor.kotoba` | **Instruction Safety Governor** -- 3 HARD checks (spec-basis · evidence-incomplete · attendance-hours-insufficient, ground-truth floor recompute · background-check-not-cleared, unconditional evaluation, a literal reuse of `school.governor/background-check-not-cleared-violations`, the 43rd grounding of this discipline overall) + already-certified guard + 1 soft (confidence/actuation gate) |
+| `src/sports/phase.kotoba` | **Phase 0→3** -- read-only → assisted intake → assisted verify → supervised (certification finalization always human; participant intake is the ONLY auto-eligible op, no direct capital risk) |
+| `src/sports/operation.kotoba` | **OperationActor** -- langgraph-clj StateGraph |
+| `src/sports/sim.kotoba` | demo driver |
 | `test/sports/*_test.clj` | governor contract · phase invariants · store parity · registry conformance · facts coverage |
 
 ## Business-process coverage (honest)
