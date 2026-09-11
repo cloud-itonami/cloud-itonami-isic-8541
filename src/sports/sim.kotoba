@@ -1,5 +1,5 @@
 (ns sports.sim
-  "Demo driver -- `clojure -M:dev:run`. Walks a clean participant
+  "Demo driver -- `kbb -M:dev:run`. Walks a clean participant
   through intake -> program verification -> background-check
   screening -> certification-finalization proposal (always escalates)
   -> human approval -> commit, then shows four HARD holds (a
