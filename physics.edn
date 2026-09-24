@@ -1,0 +1,33 @@
+;; What this vertical's robot physically does, declared for
+;; kotoba.robotics.process (kotoba-lang/robotics). `kbb -M:dev:physics` runs it.
+;;
+;; README "Robotics premise": a facility-safety monitoring robot supports
+;; physical supervision during sports and recreation instruction (ISIC 8541).
+;; Its physical work is on the field and in the gym: bringing the AED to a
+;; collapsed participant across the sports ground, and putting training
+;; equipment (medicine balls, dumbbells) back on the rack after a session.
+;;
+;; Every number without a cited source is marked `estimate` in its :basis.
+;; Replacing an estimate with a sourced value is this bot's growth work.
+{:physics/schema "itonami.physical-ai.spec.v1"
+ :repo "cloud-itonami/cloud-itonami-isic-8541"
+ :cases
+ [{:id :aed-fetch-run
+   :kind :transport
+   :procedure "robot carries the AED from the clubhouse to a participant who collapsed on the sports ground"
+   :params {:mass-kg 40.0 :payload-kg 3.0 :v-max-mps 2.0 :a-max-mps2 0.8
+            :brake-decel-mps2 1.2 :drive-force-n 250.0 :crr 0.04
+            :cog-height-m 0.45 :support-half-length-m 0.28 :max-time-s 3000.0}
+   :sweep {:param :distance-m :values [50.0 100.0 200.0 300.0 400.0]}
+   :quantity :cycle-time-s
+   :limit {:max 180.0 :basis "estimate: AED at the patient within about 3 minutes of collapse, the target commonly used for public-access defibrillation placement"}
+   :boundary {:lo 10.0 :hi 1000.0}}
+  {:id :equipment-to-rack
+   :kind :manipulator
+   :procedure "arm lifts a medicine ball or dumbbell from the gym floor mat onto the storage rack"
+   :params {:l1-m 0.50 :l2-m 0.45 :m1-kg 4.5 :m2-kg 3.0
+            :from [0.55 -0.20] :to [0.30 0.60] :duration-s 2.5 :steps 500}
+   :sweep {:param :payload-kg :values [1.0 3.0 5.0 8.0 12.0]}
+   :quantity :peak-tau1-nm
+   :limit {:max 80.0 :basis "estimate: continuous shoulder torque of a 10 kg-class collaborative arm"}
+   :boundary {:lo 0.5 :hi 30.0}}]}
